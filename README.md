@@ -31,11 +31,16 @@ LiteCart is proudly hosted on a personal home server, leveraging Docker and NGIN
 
 ## 💻 Screenshots
 **Dashboard**
-<In Devolopment>
+
+In Devolopment
+
 **POS Page**
-<In Devolopment>
+
+In Devolopment
+
 **Inventory Page**
-<In Devolopment>
+
+In Devolopment
 
 ---
 
@@ -52,7 +57,8 @@ src/index.css: Global styles.
 
 
 
-##🌟 Contributions
+## 🌟 Contributions
+
 **We welcome contributions! To contribute:**
 
 Fork the repository.
@@ -66,4 +72,5 @@ Create a pull request.
 
 
 ##📝 License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
