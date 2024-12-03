@@ -60,20 +60,26 @@ You can modify the configuration in:
 ## 🌟 Contributions
 We welcome contributions! To contribute:
 
-1. **Fork the repository**.
+1. **Fork the repository**:
+   [https://github.com/kayware/LiteCart](https://github.com/kayware/LiteCart)
 
 2. **Create a feature branch**:
    ```bash
    git checkout -b feature-name
-Commit your changes:
+   
+3. **Commit your changes**:
+   ```bash
+   git commit -m "Add a feature"
+   
+4. **Push to the branch**:
+   ```bash
+   git push origin feature-name
+   
+5. **Create a pull request**.
 
-bash
-Copy code
-git commit -m "Add a feature"
-Push to the branch:
+   Go to the original repository.
 
-bash
-Copy code
-git push origin feature-name
+   Click on the Pull Requests tab.
 
+   Click New Pull Request and submit your changes.
 ---
