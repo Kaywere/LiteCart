@@ -61,7 +61,7 @@ You can modify the configuration in:
 We welcome contributions! To contribute:
 
 1. **Fork the repository**:
-   [https://github.com/kayware/LiteCart](https://github.com/kayware/LiteCart)
+   [https://github.com/kaywere/LiteCart](https://github.com/kaywere/LiteCart)
 
 2. **Create a feature branch**:
    ```bash
