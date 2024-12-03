@@ -1,6 +1,6 @@
 # LiteCart
 
-![LiteCart Logo](https://github.com/user-attachments/assets/c2cfadf9-f26b-4803-936d-bda878fe96c7)
+![LiteCart Logo]((https://github.com/user-attachments/assets/2d9071a5-c840-457e-b1db-c7936970f4af)
 
 **LiteCart** is a lightweight, cloud-based system designed to streamline small business operations. With features like inventory management, a point-of-sale (POS) system, and a responsive dashboard, LiteCart helps you manage your shop efficiently on any device.
 
