@@ -48,29 +48,32 @@ In Devolopment
 
 ## 🎨 Customization
 
-**You can modify the configuration in:**
+You can modify the configuration in:
 
-tailwind.config.js: Tailwind settings.
-src/index.css: Global styles.
+- **`tailwind.config.js`**: Tailwind settings.
+- **`src/index.css`**: Global styles.
 
 ---
 
 
 
 ## 🌟 Contributions
+We welcome contributions! To contribute:
 
-**We welcome contributions! To contribute:**
+1. **Fork the repository**.
 
-Fork the repository.
-Create a feature branch (git checkout -b feature-name).
-Commit your changes (git commit -m 'Add a feature').
-Push to the branch (git push origin feature-name).
-Create a pull request.
+2. **Create a feature branch**:
+   ```bash
+   git checkout -b feature-name
+Commit your changes:
+
+bash
+Copy code
+git commit -m "Add a feature"
+Push to the branch:
+
+bash
+Copy code
+git push origin feature-name
 
 ---
-
-
-
-##📝 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
