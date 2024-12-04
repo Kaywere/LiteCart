@@ -1,7 +1,7 @@
 
 # LiteCart
 <h1  align="center">
-<a href="https://shadps4.net/"><img  src="https://github.com/user-attachments/assets/e734bb26-73e0-4a2f-97e9-2ee47ffeaaf9" width="250" height="250"></a>
+<a href="https://shadps4.net/"><img  src="https://github.com/user-attachments/assets/62ecef3a-dabd-43e7-a5df-acebe6d7ed46" width="250" height="250"></a>
 </h1>
 
 **LiteCart** is a lightweight, cloud-based system designed to streamline small business operations. With features like inventory management, a point-of-sale (POS) system, and a responsive dashboard, LiteCart helps you manage your shop efficiently on any device.
@@ -78,9 +78,10 @@ We welcome contributions! To contribute:
    
 5. **Create a pull request**.
 
-   - Go to the original repository.
-   - Click on the Pull Requests tab.
-   - Click New Pull Request and submit your changes.
+  - Go to the original repository.
+  - Click on the Pull Requests tab.
+  - Click New Pull Request and submit your changes.
+
 ---
 
 
