@@ -7,14 +7,9 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  margin: 0;
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark {
-  --bg-color: #1e1e1e;
-  --text-color: #f1f1f1;
+ 
 }
 
 * {
@@ -31,5 +26,5 @@ body {
   height: 100vh;
   text-align: center;
   font-size:60px ;
-   text-shadow: #333333;
+  text-shadow: #333333;
 }

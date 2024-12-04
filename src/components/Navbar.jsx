@@ -1,23 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useTheme } from '../utils/ThemeContext';
 import '../styles/Navbar.css';
 
 function Navbar() {
-  const { darkMode, toggleTheme } = useTheme(); 
+  const { darkMode, toggleTheme } = useTheme();
 
   return (
     <nav className="navbar">
       <h1 className="text-xl font-bold">LiteCart</h1>
+      
+      <div className="links">
+        <Link to="/">Dashboard</Link>
+        <Link to="/inventory">Inventory</Link>
+        <Link to="/pos">POS</Link>
+
+      </div>
 
       <div className="toggle-container">
         <input
           type="checkbox"
           id="check"
           className="toggle"
-          onChange={toggleTheme} 
-          checked={darkMode} 
+          onChange={toggleTheme}
+          checked={darkMode}
         />
-        <label htmlFor="check"></label> {}
+        <label htmlFor="check"></label>
       </div>
     </nav>
   );
