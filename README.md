@@ -87,4 +87,3 @@ We welcome contributions! To contribute:
 ## 📝 License 
 
 This project is licensed under the MIT License. See the <a href="https://github.com/Kaywere/LiteCart/blob/8f42202cc305e257368adb528802828a20a3558a/LICENSE" width="250" height="250">LICENSE</a> file for details.
->>>>>>> 271e42c2a7a273f01fe2b8a72bf1f627d0bdbf54
