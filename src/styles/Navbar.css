@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--navbar-bg-color); /* Navbar-specific background */
+    color: var(--navbar-text-color); /* Navbar-specific text */
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #555;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background-color: #777;
+  }
+  
