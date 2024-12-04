@@ -78,9 +78,9 @@ We welcome contributions! To contribute:
    
 5. **Create a pull request**.
 
-   - Go to the original repository.
-   - Click on the Pull Requests tab.
-   - Click New Pull Request and submit your changes.
+   **-** Go to the original repository.
+   **-** Click on the Pull Requests tab.
+   **-** Click New Pull Request and submit your changes.
 ---
 
 
