@@ -3,12 +3,22 @@ import { useTheme } from '../utils/ThemeContext';
 import '../styles/Navbar.css';
 
 function Navbar() {
-  const { toggleTheme } = useTheme();
+  const { darkMode, toggleTheme } = useTheme(); 
 
   return (
     <nav className="navbar">
       <h1 className="text-xl font-bold">LiteCart</h1>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+
+      <div className="toggle-container">
+        <input
+          type="checkbox"
+          id="check"
+          className="toggle"
+          onChange={toggleTheme} 
+          checked={darkMode} 
+        />
+        <label htmlFor="check"></label> {}
+      </div>
     </nav>
   );
 }
