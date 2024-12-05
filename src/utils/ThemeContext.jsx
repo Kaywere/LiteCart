@@ -25,6 +25,7 @@ export const ThemeProvider = ({ children }) => {
       root.style.setProperty('--navbar-text-color', '#ffffff'); // Dark navbar text      
       root.style.setProperty('--bg-color', '#1e1e1e'); 
       root.style.setProperty('--text-color', '#f1f1f1'); 
+      root.style.setProperty('--sidebar-btn-bg-color', '#ffffff33'); 
     } else {
       
 
@@ -34,6 +35,7 @@ export const ThemeProvider = ({ children }) => {
       root.style.setProperty('--navbar-text-color', '#333333'); // Light navbar text
       root.style.setProperty('--bg-color', '#f9f9f9');
       root.style.setProperty('--text-color', '#333333'); 
+      root.style.setProperty('--sidebar-btn-bg-color', '#ffffff'); 
     }
   }, [darkMode]); 
 

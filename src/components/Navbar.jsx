@@ -1,34 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { useTheme } from '../utils/ThemeContext';
-import '../styles/Navbar.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useTheme } from "../utils/ThemeContext";
+import "../styles/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faBoxes, faCashRegister } from "@fortawesome/free-solid-svg-icons";
+
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   return (
-    <nav className="navbar">
-      <h1 className="text-xl font-bold">LiteCart</h1>
-      
-      <div className="links">
-        <Link to="/">Dashboard</Link>
-        <Link to="/inventory">Inventory</Link>
-        <Link to="/pos">POS</Link>
+    <>
+      <nav className="navbar">
+        <button onClick={toggleSidebar} className="menu-btn">
+          ☰
+        </button>
+        <h1 className="text-xl font-bold">LiteCart</h1>
+        <div className="toggle-container">
+          <input
+            type="checkbox"
+            id="check"
+            className="toggle"
+            onChange={toggleTheme}
+            checked={darkMode}
+          />
+          <label htmlFor="check"></label>
+        </div>
+      </nav>
 
+      <div className={`sidebar ${sidebarOpen ? "open" : "collapsed"}`}>
+        <ul className="menu">
+          <li>
+            <Link to="/">
+              <FontAwesomeIcon icon={faHome} />
+              {sidebarOpen && <span>Dashboard</span>}
+            </Link>
+          </li>
+          <li>
+            <Link to="/inventory">
+              <FontAwesomeIcon icon={faBoxes} />
+              {sidebarOpen && <span>Inventory</span>}
+            </Link>
+          </li>
+          <li>
+            <Link to="/pos">
+              <FontAwesomeIcon icon={faCashRegister} />
+              {sidebarOpen && <span>POS</span>}
+            </Link>
+          </li>
+        </ul>
       </div>
-
-      <div className="toggle-container">
-        <input
-          type="checkbox"
-          id="check"
-          className="toggle"
-          onChange={toggleTheme}
-          checked={darkMode}
-        />
-        <label htmlFor="check"></label>
-      </div>
-    </nav>
+      {sidebarOpen && <div className="overlay" onClick={toggleSidebar}></div>}
+    </>
   );
 }
+
 
 export default Navbar;

@@ -9,13 +9,15 @@ body {
   color: var(--text-color);
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
- 
+  left: 76px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease;
+
 }
 
 
