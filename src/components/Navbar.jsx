@@ -4,8 +4,6 @@ import { useTheme } from "../utils/ThemeContext";
 import "../styles/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faBoxes, faCashRegister } from "@fortawesome/free-solid-svg-icons";
-
-
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,7 +18,17 @@ function Navbar() {
         <button onClick={toggleSidebar} className="menu-btn">
           ☰
         </button>
-        <h1 className="text-xl font-bold">LiteCart</h1>
+
+
+        <Link to="/Dashboard">
+ <div className="navbar-logo-container">
+ <img
+            src={darkMode ? "/img/Logod.png" : "/img/Logol.png"}
+            alt="LiteCart Logo"
+  className="navbar-logo"
+/>
+  </div>
+</Link>
         <div className="toggle-container">
           <input
             type="checkbox"
@@ -36,7 +44,7 @@ function Navbar() {
       <div className={`sidebar ${sidebarOpen ? "open" : "collapsed"}`}>
         <ul className="menu">
           <li>
-            <Link to="/">
+            <Link to="/Dashboard">
               <FontAwesomeIcon icon={faHome} />
               {sidebarOpen && <span>Dashboard</span>}
             </Link>
@@ -48,7 +56,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/pos">
+            <Link to="/">
               <FontAwesomeIcon icon={faCashRegister} />
               {sidebarOpen && <span>POS</span>}
             </Link>

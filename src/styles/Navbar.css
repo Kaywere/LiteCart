@@ -10,8 +10,26 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+
+
 }
 
+.navbar-logo-container {
+  position: relative; /* Keep the logo inside the navbar context */
+  height: 50px; /* Match the navbar height */
+  left: -42px;
+  display: flex;
+  align-items: center; /* Center the logo vertically */
+  padding-right: 70%;
+
+
+}
+.navbar-logo {
+  height: 80px; /* Increase the logo size */
+  width: auto;
+  position: absolute; /* Position it freely inside the container */
+
+}
 
 .app-container {
   display: flex;
@@ -19,35 +37,13 @@
   justify-content: center; /* Center content horizontally */
   align-items: flex-start; /* Align content to the top */
   position: relative;
-  padding: 2rem; /* Add some spacing around the content */
+  padding-top: 3rem; /* Add some spacing around the content */
+  padding-left: 2rem; /* Add some spacing around the content */
+
   box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   
-}
-
-.sidebar {
-  position: fixed;
-  top: 50px; /* Below the fixed navbar */
-  left: 0;
-  width: 70px; /* Collapsed width */
-  height: calc(100vh - 50px); /* Full height minus navbar */
-  background-color: var(--navbar-bg-color);
-  color: var(--navbar-text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
-
-.sidebar.open {
-  width: 250px; /* Expanded width */
-}
-
-.sidebar.collapsed {
-  width: 70px;
-}
-
-.sidebar.open + .main-content {
-  margin-left: 250px; /* Adjust for expanded sidebar */
-  width: calc(100% - 250px); /* Adjust content width */
 }
 
 .main-content {
@@ -65,60 +61,55 @@
 }
 
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px; 
+  height: calc(100vh ); /* Full height minus navbar */
+  background-color: var(--navbar-bg-color);
+  color: var(--navbar-text-color);
+  transition:  0.3s ease, color 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+ 
+
+}
+
+.sidebar.open {
+  width: 250px; /* Expanded width */
+  transition:  0.3s ease, color 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  
+}
+
+.sidebar.open + .main-content {
+  margin-left: 250px; /* Adjust for expanded sidebar */
+  width: calc(100% - 250px); /* Adjust content width */
+}
+
+
+
 .menu-btn {
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--navbar-text-color);
-  transition:  0.2s ease;
-
+  transition:  0.3s ease;
+padding-left: 1.1rem;
+box-shadow: none;
 }
-
 .menu-btn:hover {
-  font-size: 1.8rem;
-  background-color: var(--sidebar-btn-bg-color);
-  border: none;
-  cursor: pointer;
-  transition:  0.2s ease;
-  color: var(--navbar-text-color);
+  box-shadow: none;
+  background: none;
+
 }
 
 
-.sidebar .menu {
-  list-style: none;
-  margin: 0;
-  padding: 1rem;
-}
-
-.sidebar .menu li {
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar .menu a {
-  color: var(--navbar-text-color);
-  text-decoration: none;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar .menu a:hover {
-  background-color: var(--toggle-bg);
-  border-radius: 5px;
-}
-
-.sidebar .menu .icon-home,
-.sidebar .menu .icon-inventory,
-.sidebar .menu .icon-pos {
-  font-size: 1.5rem;
-}
-
-/* Overlay for open state */
 .overlay {
   position: fixed;
   top: 0;
@@ -128,32 +119,48 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
+.sidebar .menu {
+ 
 
-/* Collapsed sidebar icons */
-.sidebar.collapsed {
-  width: 70px;
+  list-style: none;
+  margin: 0;
+  padding-top: 5rem;
+ padding-left: 1rem;
+ 
 }
 
-.links {
-display:flex;
-margin-right: 15vh;
-  gap: 1rem;
-
-}
-
-.links a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 2rem;
-  font-weight:bold;
-  transition: color 0.3s ease;
-}
-
-.links a:hover {
-  color: var(--toggle-fg); /* Matches the toggle knob color */
-}
+.sidebar .menu li {
   
 
+  margin: 1rem 0;
+  align-items: center;
+}
+
+
+
+.sidebar .menu a {
+  font-size: x-large;
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:  0.2s ease;
+
+
+}
+
+.sidebar .menu a:hover {
+  background-color: var(--toggle-bg);
+  border-radius: 5px;
+
+  transition:  0.2s ease;
+
+}
+  
   .toggle-container {
     position: relative;
     right: 0.5rem;
@@ -183,7 +190,7 @@ margin-right: 15vh;
     background-color: var(--toggle-bg, #ccc);
     margin-right: 0.5em;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 250ms ease-in-out;
+    transition: background-color 300ms ease-in-out;
   }
   
 
@@ -214,10 +221,16 @@ margin-right: 15vh;
     width: 250px;
     left: -250px;
     transition: left 0.3s ease;
+    
   }
-
+  .app-container {
+    padding-top: 4rem; /* Add some spacing around the content */
+    padding-left: 0rem; /* Add some spacing around the content */
+  
+  }
   .sidebar.open {
     left: 0;
+   
   }
 
   .main-content {

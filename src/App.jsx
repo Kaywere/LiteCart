@@ -9,16 +9,14 @@ import POS from "./pages/POS";
 function App() {
   return (
     <Router>
-      <div className="app">
         <Navbar />
         <div className="app-container">
           <Routes>
-            <Route path="/" element={<div className="main-content"><Dashboard /></div>} />
+            <Route path="/Dashboard" element={<div className="main-content"><Dashboard /></div>} />
             <Route path="/inventory" element={<div className="main-content"><InventoryManagement /></div>} />
-            <Route path="/pos" element={<div className="main-content"><POS /></div>} />
+            <Route path="/" element={<div className="main-content"><POS /></div>} />
           </Routes>
         </div>
-      </div>
     </Router>
   );
 }
