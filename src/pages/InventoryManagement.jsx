@@ -28,7 +28,7 @@ function InventoryManagement() {
           <thead>
             <tr>
               <th>Item ID</th>
-              <th>Item Name</th>
+              <th>Item 2Name</th>
               <th>Purchase Price</th> {/* Added Purchase Price */}
               <th>Stock</th>
               <th>Retail Price</th>
