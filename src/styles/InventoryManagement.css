@@ -149,12 +149,15 @@ box-shadow: none;
   display: block;
   margin-bottom: 5px;
   font-size: large;
+  text-align: left;
 }
 
 .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px var(--text-color);
 }
 
 .form-actions {
@@ -178,6 +181,18 @@ box-shadow: none;
 
 }
 
+.save-btn,.cancel-btn{
+  font-size: 25px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 150px;
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add smooth transition */
+  transform: scale(1);
+}
 .add-close-btn {
   background-color: #2196f3;
   
