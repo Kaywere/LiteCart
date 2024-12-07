@@ -3,13 +3,13 @@
   background-color: var(--bg-color);
   color: var(--text-color);
   height: 100vh;
-  display: flex;
   flex-direction: column;
+display: flex;
 }
 
 .pos-container {
   display: flex;
-  gap: 4rem;
+    gap: 4rem;
   height: calc(100vh - 4rem);
 }
 
@@ -73,7 +73,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 128, 0, 0.4);
+  box-shadow: 0 4px 6px rgba(0, 128, 0, 0.4);
 
 }
 
@@ -86,7 +86,7 @@
 /* Right Product Frame */
 .product-frame {
   flex: 2;
-  width: 80rem;
+  width: 60rem ;
   background-color: var(--navbar-bg-color);
   border-radius: 8px;
   padding: 1rem;
@@ -103,9 +103,8 @@
   
 }
 .product-actions button {
-  width: 120px; /* Set desired width */
-  height: 60px; /* Set desired height */
-  font-size: 1.2rem; /* Adjust font size */
+
+  font-size: 2.2rem; /* Adjust font size */
   margin: 0.5rem;
  
   border-radius: 8px; /* Optional: round the corners */
@@ -129,6 +128,7 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: larger;
 }
 
 .product-grid {
@@ -150,6 +150,8 @@
 
 .product-card:hover {
   transform: scale(1.05);
+  box-shadow: 0px 0px 10px var(--text-color)
+
 }
 button {
   background-color: var(--bg-color);
@@ -164,4 +166,6 @@ button {
 
 button:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px var(--text-color)
+
 }
