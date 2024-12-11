@@ -78,7 +78,39 @@ function POS() {
     }
   };
 
-
+  useEffect(() => {
+    const fetchAndValidateMostPickedItems = async () => {
+      try {
+        // Fetch updated items from the database
+        const response = await fetch("https://decryptic.online/php2/getItems.php");
+        if (!response.ok) {
+          throw new Error("Failed to fetch items from the database");
+        }
+  
+        const itemsFromDB = await response.json();
+  
+        // Validate and sync `mostPickedItems` with the database
+        const validItems = mostPickedItems.filter((pickedItem) =>
+          itemsFromDB.some((dbItem) => dbItem.id === pickedItem.id)
+        );
+  
+        validItems.sort((a, b) => b.count - a.count);
+  
+        setMostPickedItems(validItems);
+  
+        // Update cookies with the valid and sorted list
+        Cookies.set("mostPickedItems", JSON.stringify(validItems), {
+          expires: 7,
+        });
+      } catch (error) {
+        console.error("Error fetching or validating most picked items:", error);
+      }
+    };
+  
+    fetchAndValidateMostPickedItems();
+  }, []); // Run once on page load
+  
+  
 
 const printInvoice = (latestInvoiceId) => {
   if (!latestInvoiceId) {
@@ -486,11 +518,12 @@ const fetchTodayInvoices = async () => {
                 <div
                   key={item.id}
                   className="product-card"
-                  onClick={() => handleCardClick(item)}
+                  onClick={() => {handleCardClick(item);updateMostPickedItems(item);}}
                 >
                   <h3>{item.name}</h3>
                   <p>Price: ${item.retail_price}</p>
                   <p>Stock: {item.stock}</p>
+                  
                 </div>
               ))}
             </div>
