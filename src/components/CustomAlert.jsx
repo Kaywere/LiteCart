@@ -4,14 +4,14 @@ import "../styles/CustomAlert.css";
 function CustomAlert({ message, onConfirm, onCancel }) {
   const alertRef = useRef(null);
 
-  // Function to handle clicks outside the alert box
+  
   const handleClickOutside = (event) => {
     if (alertRef.current && !alertRef.current.contains(event.target)) {
-      onCancel(); // Close the alert
+      onCancel(); 
     }
   };
 
-  // Add and clean up event listener for outside clicks
+  
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

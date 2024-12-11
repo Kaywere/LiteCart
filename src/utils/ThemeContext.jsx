@@ -5,8 +5,8 @@ import useLocalStorage from "use-local-storage";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [darkMode, setDarkMode] = useLocalStorage("darkMode", preference);
+ 
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
 
   
   const toggleTheme = () => {

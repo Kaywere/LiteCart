@@ -27,22 +27,22 @@ function InventoryManagement() {
     stock: "",
   });
 
-  // Fetch items from the API on component mount
+  
   useEffect(() => {
     const fetchItems = async () => {
       try {
         const response = await fetch("https://decryptic.online/php2/getItems.php");
         const data = await response.json();
-        setItems(data); // Update the state with fetched data
+        setItems(data); 
       } catch (error) {
         console.error("Error fetching items:", error);
       }
     };
 
     fetchItems();
-  }, []); // Empty dependency array means this runs once on component mount
+  }, []); 
 
-  // Handle form input changes
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -62,11 +62,11 @@ function InventoryManagement() {
   
       if (response.ok) {
         const newItem = await response.json();
-        setItems((prevItems) => [...prevItems, newItem]); // Add the new item directly to the state
+        setItems((prevItems) => [...prevItems, newItem]); 
   
         console.log("Item added successfully:", newItem);
   
-        // Clear the form fields
+        
         setFormData({
           name: "",
           purchase_price: "",
@@ -74,7 +74,7 @@ function InventoryManagement() {
           stock: "",
         });
   
-        // Optionally close the form
+        
         if (closeForm) {
           setShowForm(false);
         }
@@ -86,19 +86,19 @@ function InventoryManagement() {
     }
   };
   
-  // Handle edit button click
+  
   const handleEdit = (item) => {
     setEditFormData(item);
     setEditFormVisible(true);
   };
 
-  // Handle form input change
+  
   const handleEditChange = (e) => {
     const { name, value } = e.target;
     setEditFormData({ ...editFormData, [name]: value });
   };
 
-  // Handle form submission
+  
   const handleEditSubmit = async () => {
     try {
       const response = await fetch("https://decryptic.online/php2/editItem.php", {
@@ -123,7 +123,7 @@ function InventoryManagement() {
     }
   };
 
-  // Close edit form
+ 
   const closeEditForm = () => {
     setEditFormVisible(false);
   };
@@ -136,7 +136,7 @@ function InventoryManagement() {
 
   const confirmDelete = async () => {
     if (isMultiDelete) {
-      // Multi-delete logic
+      
       try {
         const response = await fetch("https://decryptic.online/php2/deleteItems.php", {
           method: "POST",
@@ -148,14 +148,14 @@ function InventoryManagement() {
           const result = await response.json();
           if (result.success) {
             setItems((prevItems) => prevItems.filter((item) => !selectedItems.includes(item.id)));
-            setSelectedItems([]); // Clear selected items after deletion
+            setSelectedItems([]); 
           }
         }
       } catch (error) {
         console.error("Error deleting items:", error);
       }
     } else {
-      // Single delete logic (existing)
+      
       try {
         const response = await fetch("https://decryptic.online/php2/deleteItem.php", {
           method: "POST",
@@ -174,20 +174,20 @@ function InventoryManagement() {
       }
     }
   
-    setShowAlert(false); // Hide alert
-    setDeleteId(null); // Reset single delete ID
-    setIsMultiDelete(false); // Reset multi-delete flag
+    setShowAlert(false); 
+    setDeleteId(null); 
+    setIsMultiDelete(false); 
   };
   
-  // Updated cancelDelete
+  
   const cancelDelete = () => {
-    setShowAlert(false); // Hide alert
-    setDeleteId(null); // Reset single delete ID
-    setIsMultiDelete(false); // Reset multi-delete flag
+    setShowAlert(false);
+    setDeleteId(null); 
+    setIsMultiDelete(false); 
   };
 
 
-  // Handle individual checkbox change
+  
   const handleCheckboxChange = (e, id) => {
     if (e.target.checked) {
       setSelectedItems((prev) => [...prev, id]);
@@ -196,7 +196,7 @@ function InventoryManagement() {
     }
   };
   
-  // Handle "Select All" checkbox change
+  
   const handleSelectAll = (isChecked) => {
     if (isChecked) {
       const allItemIds = items.map((item) => item.id);
@@ -209,8 +209,8 @@ function InventoryManagement() {
   
   const handleDeleteSelected = () => {
     if (selectedItems.length > 0) {
-      setIsMultiDelete(true); // Mark this as a multi-delete operation
-      setShowAlert(true); // Show the alert
+      setIsMultiDelete(true); 
+      setShowAlert(true); 
     } else {
       console.warn("No items selected for deletion.");
     }
@@ -286,7 +286,7 @@ function InventoryManagement() {
       <button
   className="delete-selected-btn"
   onClick={handleDeleteSelected}
-  disabled={selectedItems.length === 0} // Disable if no items selected
+  disabled={selectedItems.length === 0} 
 >
   Delete Selected
 </button>
@@ -295,7 +295,7 @@ function InventoryManagement() {
           <div
           className="overlay"
           onClick={(e) => {
-            // Close the form if the user clicks outside the form container
+            
             if (e.target.classList.contains("overlay")) {
               setShowForm(false);
               setFormData({ name: "", purchase_price: "", retail_price: "", stock: "" });
@@ -363,7 +363,7 @@ function InventoryManagement() {
         type="button"
         onClick={() => handleAddItem(true)}
         className="add-close-btn"
-        disabled={!isFormValid()} // Disable the button if form is invalid
+        disabled={!isFormValid()} 
       >
         Add Item and Close
       </button>
@@ -371,7 +371,7 @@ function InventoryManagement() {
         type="button"
         onClick={() => handleAddItem(false)}
         className="add-btn"
-        disabled={!isFormValid()} // Disable the button if form is invalid
+        disabled={!isFormValid()} 
       >
         Add Item and Don’t Close
       </button>
