@@ -60,6 +60,20 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <h1 className="dashboard-title">Dashboard</h1>
+      <div className="dashboard-cards">
+        <div className="card earnings">
+          <h2>Daily Earnings</h2>
+          <p>{dailyEarnings}SR</p>
+        </div>
+        <div className="card inventory">
+          <h2>Total Invoices (Today)</h2>
+          <p>{totalInvoices}</p>
+        </div>
+        <div className="card inventory">
+          <h2>Total Items in Inventory</h2>
+          <p>{totalItems}</p>
+        </div>
+      </div>
       <div className="dashboard-chart">
         {chartData.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
