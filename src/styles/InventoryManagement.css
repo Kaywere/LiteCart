@@ -28,10 +28,10 @@
   }
   
   .inventory-table {
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Ensure vertical alignment */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
 
     font-size: 1.2rem;
     margin: 1rem 0;
@@ -191,7 +191,7 @@ box-shadow: none;
   cursor: pointer;
   border-radius: 5px;
   width: 150px;
-  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
   transform: scale(1);
 
 }
@@ -205,7 +205,7 @@ box-shadow: none;
   cursor: pointer;
   border-radius: 5px;
   width: 150px;
-  transition: background-color 0.3s ease, opacity 0.3s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease, opacity 0.3s ease; 
   transform: scale(1);
 }
 .add-close-btn {
@@ -222,13 +222,13 @@ box-shadow: none;
 .add-btn:disabled,
 .add-close-btn:disabled {
 
-  cursor:default; /* Show disabled cursor */
-  opacity: 0.6; /* Make it slightly transparent */
+  cursor:default; 
+  opacity: 0.6; 
 }
 .delete-selected-btn:disabled {
 
-  cursor:default; /* Show disabled cursor */
-  opacity: 0.4; /* Make it slightly transparent */
+  cursor:default;
+  opacity: 0.4; 
 }
 .delete-selected-btn:disabled {
 

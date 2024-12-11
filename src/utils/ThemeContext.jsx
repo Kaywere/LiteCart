@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }) => {
       root.style.setProperty('--sidebar-btn-bg-color', '#ffffff33'); 
     } else {
       
-                     // Light
+                  // Light
       root.style.setProperty('--toggle-bg', '#ffeb3b'); 
       root.style.setProperty('--toggle-fg', '#fff59d'); 
       root.style.setProperty('--navbar-bg-color', '#cbdbf5');

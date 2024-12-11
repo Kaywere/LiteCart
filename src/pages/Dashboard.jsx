@@ -3,9 +3,9 @@ import "../styles/Dashboard.css";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 function Dashboard() {
-  const [dailyEarnings, setDailyEarnings] = useState(null); // Initialize as null to detect loading
-  const [totalInvoices, setTotalInvoices] = useState(null); // Initialize as null
-  const [totalItems, setTotalItems] = useState(null); // Initialize as null
+  const [dailyEarnings, setDailyEarnings] = useState(null); 
+  const [totalInvoices, setTotalInvoices] = useState(null); 
+  const [totalItems, setTotalItems] = useState(null); 
 
   useEffect(() => {
     const fetchDailyEarnings = async () => {
@@ -43,7 +43,6 @@ function Dashboard() {
     fetchTotalItems();
   }, []);
 
-  // Prepare chart data
   const chartData =
     dailyEarnings !== null && totalInvoices !== null && totalItems !== null
       ? [
@@ -53,7 +52,7 @@ function Dashboard() {
         ]
       : [];
 
-  console.log("Chart Data:", chartData); // Debugging: Log chart data to verify
+  console.log("Chart Data:", chartData); 
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 

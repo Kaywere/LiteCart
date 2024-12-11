@@ -15,30 +15,30 @@
 }
 
 .navbar-logo-container {
-  position: relative; /* Keep the logo inside the navbar context */
-  height: 50px; /* Match the navbar height */
+  position: relative;
+  height: 50px; 
   left: -42px;
   display: flex;
-  align-items: center; /* Center the logo vertically */
+  align-items: center;
   padding-right: 70%;
 
 
 }
 .navbar-logo {
-  height: 80px; /* Increase the logo size */
+  height: 80px; 
   width: auto;
-  position: absolute; /* Position it freely inside the container */
+  position: absolute;
 
 }
 
 .app-container {
   display: flex;
-  margin-top: 50px; /* Space for the fixed navbar */
-  justify-content: center; /* Center content horizontally */
-  align-items: flex-start; /* Align content to the top */
+  margin-top: 50px; 
+  justify-content: center;
+  align-items: flex-start; 
   position: relative;
-  padding-top: 3rem; /* Add some spacing around the content */
-  padding-left: 2rem; /* Add some spacing around the content */
+  padding-top: 3rem; 
+  padding-left: 2rem;
   background-color: var(--bg-color);
 
   box-sizing: border-box;
@@ -47,13 +47,13 @@
 }
 
 .main-content {
-  margin-left: 0px; /* Space for collapsed sidebar */
-  width: calc(100% - 70px); /* Adjust content width */
-  height: calc(100vh - 50px); /* Full height minus navbar */
-  text-align: center; /* Center the text horizontally */
+  margin-left: 0px; 
+  width: calc(100% - 70px);
+  height: calc(100vh - 50px);
+  text-align: center; 
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   transition: background-color 0.3s ease, color 0.3s ease;
 
   background-color: var(--bg-color);
@@ -66,7 +66,7 @@
   top: 0;
   left: 0;
   width: 70px; 
-  height: calc(100vh ); /* Full height minus navbar */
+  height: calc(100vh ); 
   background-color: var(--navbar-bg-color);
   color: var(--navbar-text-color);
   transition:  0.3s ease, color 0.3s ease;
@@ -77,7 +77,7 @@
 }
 
 .sidebar.open {
-  width: 250px; /* Expanded width */
+  width: 250px; 
   transition:  0.3s ease, color 0.3s ease;
 }
 
@@ -87,8 +87,8 @@
 }
 
 .sidebar.open + .main-content {
-  margin-left: 250px; /* Adjust for expanded sidebar */
-  width: calc(100% - 250px); /* Adjust content width */
+  margin-left: 250px; 
+  width: calc(100% - 250px); 
 }
 
 
@@ -225,8 +225,8 @@ box-shadow: none;
     
   }
   .app-container {
-    padding-top: 4rem; /* Add some spacing around the content */
-    padding-left: 0rem; /* Add some spacing around the content */
+    padding-top: 4rem; 
+    padding-left: 0rem; 
   
   }
   .sidebar.open {

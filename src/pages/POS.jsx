@@ -64,10 +64,8 @@ function POS() {
         throw new Error("Failed to add invoice items");
       }
   
-      // Print invoice immediately after processing sale
       printInvoice(invoice_id);
   
-      // Reset the POS state
       setCheckoutItems([]);
       setGrandTotal(0);
       setPaymentMethod(null);
@@ -83,7 +81,6 @@ function POS() {
   useEffect(() => {
     const fetchAndValidateMostPickedItems = async () => {
       try {
-        // Fetch updated items from the database
         const response = await fetch("https://decryptic.online/php2/getItems.php");
         if (!response.ok) {
           throw new Error("Failed to fetch items from the database");
@@ -91,7 +88,6 @@ function POS() {
   
         const itemsFromDB = await response.json();
   
-        // Validate and sync `mostPickedItems` with the database
         const validItems = mostPickedItems.filter((pickedItem) =>
           itemsFromDB.some((dbItem) => dbItem.id === pickedItem.id)
         );
@@ -100,7 +96,6 @@ function POS() {
   
         setMostPickedItems(validItems);
   
-        // Update cookies with the valid and sorted list
         Cookies.set("mostPickedItems", JSON.stringify(validItems), {
           expires: 7,
         });
@@ -110,12 +105,12 @@ function POS() {
     };
   
     fetchAndValidateMostPickedItems();
-  }, []); // Run once on page load
+  }, []); 
   
   
 
 const printInvoice = (latestInvoiceId) => {
-  // Open a small window for the invoice
+ 
   window.open(
     `https://decryptic.online/php2/getInvoice.php?invoice_id=${latestInvoiceId}`,
     "_blank",
@@ -291,8 +286,8 @@ const fetchTodayInvoices = async () => {
   };
 
   const handlePaymentAndPrint = async () => {
-    await processSale(); // Ensure processSale completes
-    printInvoice(latestInvoiceId); // Call printInvoice after the sale is processed
+    await processSale(); 
+    printInvoice(latestInvoiceId);
   };
   
 
@@ -414,7 +409,7 @@ const fetchTodayInvoices = async () => {
         <button
   className="print-invoice-btn"
   onClick={printInvoice}
-  disabled={!latestInvoiceId} // Disable the button if no invoice ID is available
+  disabled={!latestInvoiceId} 
 >
   Print Invoice
 </button>
@@ -428,8 +423,8 @@ const fetchTodayInvoices = async () => {
       {showAlert && (
         <CustomAlert
           message={alertMessage}
-          onConfirm={() => setShowAlert(false)} // Close alert when "Yes" is clicked
-          onCancel={() => setShowAlert(false)} // Close alert when "No" is clicked
+          onConfirm={() => setShowAlert(false)} 
+          onCancel={() => setShowAlert(false)} 
         />
       )}
              <button onClick={fetchTodayInvoices}>Fetch Today's Invoices</button>

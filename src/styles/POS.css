@@ -20,9 +20,9 @@ display: flex;
   border-radius: 8px;
   padding: 1rem;
   display: flex;
-  width: 500px; /* Set a fixed width */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  word-wrap: break-word; /* Break long words onto the next line */
+  width: 500px; 
+  overflow-x: hidden; 
+  word-wrap: break-word; 
   gap: 2rem;
   flex-direction: column;
   justify-content: space-between;
@@ -30,30 +30,28 @@ display: flex;
 
 }
 .checkout-table::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in WebKit-based browsers (e.g., Chrome, Safari) */
-  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  display: none; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 
 .checkout-table {
   flex: 3;
   background-color: var(--bg-color);
-  table-layout: fixed; /* Ensures the table columns don't expand */
+  table-layout: fixed; 
 
 overflow-y:auto;
 }
 
 .checkout-table table {
-  table-layout: fixed; /* Ensures the table columns don't expand */
+  table-layout: fixed; 
   width: 100%; 
- 
-
-  /* Ensures it fits within the container */}
+ }
 
 .checkout-table th {
-  position: sticky; /* Make the header sticky */
-  top: 0; /* Stick the header to the top of the container */
+  position: sticky; 
+  top: 0; 
   z-index: 2;
   padding: 0.5rem;
   text-align: center;
@@ -65,9 +63,9 @@ overflow-y:auto;
   font-size: medium;
   padding: 0.5rem;
   text-align: center;
-  overflow: hidden; /* Prevents text from overflowing */
-  text-overflow: ellipsis; /* Adds "..." for long text */
-  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
   border: 1px solid #ddd;
 }
 .checkout-summary {
@@ -78,8 +76,8 @@ overflow-y:auto;
   gap: 1rem;
 }
 .qty-input {
-  width: 50px; /* Adjust the width as needed */
-  text-align: center; /* Center align the text for better appearance */
+  width: 50px; 
+  text-align: center; 
 }
 
 .discount-buttons {
@@ -205,11 +203,11 @@ overflow-y:auto;
 }
 .product-actions button {
 
-  font-size: 1.6rem; /* Adjust font size */
+  font-size: 1.6rem;
   margin: 0.3rem;
  
-  border-radius: 8px; /* Optional: round the corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   
 }
 
@@ -300,36 +298,35 @@ padding-top: 15px;
 
 
 /* Overlay */
-/* Modal Overlay */
 .custom-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 1000; /* Ensure it appears above other content */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent body scrolling */
+  overflow: hidden; 
 }
 
-/* Modal Content */
+
 .custom-modal-content {
   background-color: var(--navbar-bg-color);
   border-radius: 8px;
   padding: 20px;
-  width: 80%; /* Responsive width */
-  max-width: 600px; /* Limit max width */
-  max-height: 95vh; /* Limit vertical height */
+  width: 80%; 
+  max-width: 600px; 
+  max-height: 95vh;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease-in-out;
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+  overflow-y: auto; 
   overflow-x: hidden;
 }
 .custom-modal-content::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in WebKit-based browsers (e.g., Chrome, Safari) */
+  display: none; 
 
 }
 .custom-modal-content .header{
@@ -338,7 +335,7 @@ padding-top: 15px;
   justify-content: right;
   gap: 8rem;
 }
-/* Table inside Modal */
+
 .custom-modal-content table {
   
   background-color: var(--bg-color);
@@ -364,9 +361,8 @@ font-size: medium;
 
 }
 
-/* Close Button */
 .custom-modal-content .close-btn2 {
-  background-color: #e74c3c; /* Red */
+  background-color: #e74c3c; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -376,7 +372,7 @@ font-size: medium;
 }
 
 .custom-modal-content .close-btn3 {
-  background-color: #e74c3c; /* Red */
+  background-color: #e74c3c; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -385,10 +381,10 @@ font-size: medium;
 }
 
 .custom-modal-content .close-btn2:hover {
-  background-color: #c0392b; /* Darker red */
+  background-color: #c0392b; 
 }
 
-/* Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
