@@ -274,6 +274,9 @@ function InventoryManagement() {
       <button className="import-btn" onClick={() => document.getElementById('fileInput').click()}>
   Import
 </button>
+<p>*Note:when you uplaod xlsx file make sure the headers is like this</p>
+<p>Name	- Purchase Price - Retail - Price	Stock
+</p>
 <input
   type="file"
   id="fileInput"

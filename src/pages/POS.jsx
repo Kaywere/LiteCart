@@ -32,12 +32,11 @@ function POS() {
 
   const processSale = async () => {
     try {
-      // Create a FormData object for the invoice
+      // Create invoice
       const invoiceFormData = new FormData();
       invoiceFormData.append("payment_method", paymentMethod);
       invoiceFormData.append("total", grandTotal);
   
-      // Send the invoice creation request
       const invoiceResponse = await fetch("https://decryptic.online/php2/addInvoice.php", {
         method: "POST",
         body: invoiceFormData,
@@ -47,11 +46,9 @@ function POS() {
         throw new Error("Failed to create invoice");
       }
   
-      // Extract the `invoice_id` from the response
       const { invoice_id } = await invoiceResponse.json();
-      setLatestInvoiceId(invoice_id); // Store the invoice ID in state
   
-      // Send the invoice items request
+      // Add invoice items
       const itemsResponse = await fetch("https://decryptic.online/php2/addInvoiceItems.php", {
         method: "POST",
         headers: {
@@ -67,16 +64,21 @@ function POS() {
         throw new Error("Failed to add invoice items");
       }
   
-      // Reset the state after successful processing
+      // Print invoice immediately after processing sale
+      printInvoice(invoice_id);
+  
+      // Reset the POS state
       setCheckoutItems([]);
       setGrandTotal(0);
       setPaymentMethod(null);
+  
       console.log("Sale processed successfully!");
     } catch (error) {
       console.error("Error processing sale:", error);
       alert("Failed to process sale.");
     }
   };
+  
 
   useEffect(() => {
     const fetchAndValidateMostPickedItems = async () => {
@@ -113,10 +115,6 @@ function POS() {
   
 
 const printInvoice = (latestInvoiceId) => {
-  if (!latestInvoiceId) {
-    alert("No invoice available to print.");
-    return;
-  }
   // Open a small window for the invoice
   window.open(
     `https://decryptic.online/php2/getInvoice.php?invoice_id=${latestInvoiceId}`,
@@ -327,8 +325,8 @@ const fetchTodayInvoices = async () => {
           className="qty-input"
         />
       </td>
-      <td>${item.price}</td>
-      <td>${(item.quantity * item.price).toFixed(2)}</td>
+      <td>{item.price}SR</td>
+      <td>{(item.quantity * item.price).toFixed(2)}SR</td>
       <td>
         <button
           className="remove-btn"
@@ -343,7 +341,7 @@ const fetchTodayInvoices = async () => {
             </table>
           </div>
           <div className="checkout-summary">
-            <h2>Grand Total: ${grandTotal.toFixed(2)}</h2>
+            <h2>Grand Total: SR{grandTotal.toFixed(2)}</h2>
             <div className="discount-buttons">
               <button
                 onClick={() => {
@@ -359,7 +357,7 @@ const fetchTodayInvoices = async () => {
                   setShowDiscountForm(true);
                 }}
               >
-                Discount $
+                Discount SR
               </button>
             </div>
 
@@ -469,7 +467,7 @@ const fetchTodayInvoices = async () => {
           {todaysInvoices.map((invoice) => (
             <tr key={invoice.id}>
               <td>{invoice.id}</td>
-              <td>${invoice.total}</td>
+              <td>{invoice.total}SR</td>
               <td>{invoice.payment_method}</td>
               <td>
                 <button onClick={() => printInvoice(invoice.id)}>Print</button>
@@ -521,7 +519,7 @@ const fetchTodayInvoices = async () => {
                   onClick={() => {handleCardClick(item);updateMostPickedItems(item);}}
                 >
                   <h3>{item.name}</h3>
-                  <p>Price: ${item.retail_price}</p>
+                  <p>Price: {item.retail_price}SR</p>
                   <p>Stock: {item.stock}</p>
                   
                 </div>
