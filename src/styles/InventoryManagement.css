@@ -4,7 +4,22 @@
     width: 100%;
     padding: 2rem;
   }
+  .import-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
+  .import-btn:hover {
+    background-color: #45a049;
+  }
+  
+
   .inventory-title {
 
     font-size: 2rem;

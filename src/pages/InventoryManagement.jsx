@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/InventoryManagement.css";
 import CustomAlert from "../components/CustomAlert";
+import * as XLSX from "xlsx"; // Import the XLSX library
 
 
 function InventoryManagement() {
@@ -28,6 +29,52 @@ function InventoryManagement() {
   });
 
   
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+  
+    reader.onload = async (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const parsedData = XLSX.utils.sheet_to_json(sheet);
+  
+      // Prepare data for bulk API call
+      const bulkData = parsedData.map((item) => ({
+        name: item.Name,
+        purchase_price: item["Purchase Price"],
+        retail_price: item["Retail Price"],
+        stock: item.Stock,
+      }));
+  
+      try {
+        const response = await fetch("https://decryptic.online/php2/import.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ items: bulkData }),
+        });
+  
+        const result = await response.json();
+  
+        if (result.success) {
+          alert("Items imported successfully!");
+          window.location.reload(); // Refresh the inventory
+        } else {
+          alert(result.error || "Failed to import items.");
+        }
+      } catch (error) {
+        console.error("Error importing items:", error);
+        alert("An error occurred while importing items.");
+      }
+    };
+  
+    reader.readAsArrayBuffer(file);
+  };
+  
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -224,9 +271,22 @@ function InventoryManagement() {
   return (
     <div className="inventory-management">
       <h1 className="inventory-title">Inventory Management</h1>
+      <button className="import-btn" onClick={() => document.getElementById('fileInput').click()}>
+  Import
+</button>
+<input
+  type="file"
+  id="fileInput"
+  accept=".xlsx"
+  style={{ display: 'none' }}
+  onChange={handleFileUpload}
+/>
       <div className="inventory-table1">
+        
+
       </div>
       <div className="inventory-table">
+        
         <table>
           <thead>
             <tr>
