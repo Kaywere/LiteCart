@@ -287,7 +287,7 @@ const fetchTodayInvoices = async () => {
 
   const handlePaymentAndPrint = async () => {
     await processSale(); 
-    printInvoice(latestInvoiceId);
+    
   };
   
 
@@ -406,13 +406,6 @@ const fetchTodayInvoices = async () => {
         >
           Pay {paymentMethod}
         </button>
-        <button
-  className="print-invoice-btn"
-  onClick={printInvoice}
-  disabled={!latestInvoiceId} 
->
-  Print Invoice
-</button>
 
         </div>
 
@@ -477,8 +470,7 @@ const fetchTodayInvoices = async () => {
     </div>
   </div>
 )}
-            <button>Button 3</button>
-            <button>Button 4</button>
+
           </div>
           <div className="product-list">
             <div className="search-container">

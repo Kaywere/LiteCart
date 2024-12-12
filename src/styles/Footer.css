@@ -1,0 +1,17 @@
+.footer1 {
+    text-align: center;
+    padding: 1rem;
+    background-color: transparent;
+    font-size: 18px;
+    position: sticky;
+bottom: 0;
+    
+    
+  }
+  
+  .footer1 a {
+    color: #007bff;
+    text-decoration: none;
+    
+  }
+  

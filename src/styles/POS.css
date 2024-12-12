@@ -9,6 +9,7 @@ display: flex;
 
 .pos-container {
   display: flex;
+  
     gap: 1rem;
   height: calc(100vh - 4rem);
 }
@@ -149,14 +150,8 @@ overflow-y:auto;
 }
 
 
-.payment-input {
 
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
-  
-}
+
 .payment-methods {
   display: flex;
   flex-direction: column;
@@ -385,6 +380,7 @@ font-size: medium;
 }
 
 
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -393,5 +389,52 @@ font-size: medium;
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+/* General Styles */
+
+
+/* iPhone X Max */
+@media screen and (max-width: 414px) {
+.pos{
+  font-size: small;
+   
+  width: 25rem;
+}
+.pos-container {
+  display: flex;
+  flex-direction: column-reverse;
+    gap:1rem;
+height: 1000rem;
+
+}
+.checkout-frame{
+margin-top: 2rem;
+font-size: small;
+width: 21rem;
+}
+.checkout-table{
+font-size: small;
+
+}
+
+.product-frame{
+width: 21rem;
+}
+
+.pos button{
+  font-size: medium;
+
+}
+}
+
+/* Tablets (portrait and landscape) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .pos{
+
+  
   }
 }
