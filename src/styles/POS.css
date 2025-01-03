@@ -159,6 +159,14 @@ overflow-y:auto;
   
 }
 
+.total{
+font-size: 40px;
+
+  color:var(--text-color) ;
+  border-radius: 8px;
+  padding: 8px;
+}
+
 .pay-button {
   margin-top: 1rem;
   padding: 1rem;
@@ -379,6 +387,22 @@ font-size: medium;
   background-color: #c0392b; 
 }
 
+
+.footer3 {
+  text-align: center;
+
+  background-color: transparent;
+  font-size: 18px;
+  bottom:30px;
+  left: 93.5vh;
+  position: absolute;
+}
+
+.footer3 a {
+  color: #007bff;
+  text-decoration: none;
+  
+}
 
 
 @keyframes fadeIn {

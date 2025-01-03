@@ -272,7 +272,7 @@ function InventoryManagement() {
       <button className="import-btn" onClick={() => document.getElementById('fileInput').click()}>
         Import
       </button>
-      <p>Note:when you uplaod xlsx file make sure the headers is like this</p>
+      <p>-Note:when you uplaod xlsx file make sure the headers are like this</p>
       <p>Name	- Purchase Price - Retail - Price	Stock
       </p>
       <input
@@ -508,7 +508,12 @@ function InventoryManagement() {
       )}
 
 
-
+<footer className="footer">
+      Developed by{" "}
+      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
+        Khalid Alzahrani
+      </a>
+    </footer>
 
     </div>
   );

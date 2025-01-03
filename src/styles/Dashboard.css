@@ -46,3 +46,18 @@
     font-size: 1rem;
   }
   
+  .footer2 {
+    text-align: center;
+  
+    background-color: transparent;
+    font-size: 18px;
+    bottom: 30px;
+    left: 93.5vh;
+position: fixed;
+      }
+  
+  .footer2 a {
+    color: #007bff;
+    text-decoration: none;
+    
+  }

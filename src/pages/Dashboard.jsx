@@ -98,6 +98,12 @@ function Dashboard() {
           <p>Loading data...</p>
         )}
       </div>
+      <footer className="footer2">
+      Developed by{" "}
+      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
+        Khalid Alzahrani
+      </a>
+    </footer>
     </div>
   );
 }

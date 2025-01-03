@@ -64,6 +64,20 @@ function POS() {
         throw new Error("Failed to add invoice items");
       }
   
+      // Update stock levels
+      const stockUpdateResponse = await fetch("https://decryptic.online/php2/updateStock.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(checkoutItems),
+      });
+  
+      if (!stockUpdateResponse.ok) {
+        throw new Error("Failed to update stock levels");
+      }
+  
+      // Print invoice and reset POS
       printInvoice(invoice_id);
   
       setCheckoutItems([]);
@@ -76,6 +90,7 @@ function POS() {
       alert("Failed to process sale.");
     }
   };
+  
   
 
   useEffect(() => {
@@ -336,7 +351,7 @@ const fetchTodayInvoices = async () => {
             </table>
           </div>
           <div className="checkout-summary">
-            <h2>Grand Total: SR{grandTotal.toFixed(2)}</h2>
+          
             <div className="discount-buttons">
               <button
                 onClick={() => {
@@ -396,7 +411,9 @@ const fetchTodayInvoices = async () => {
             <button onClick={() => handlePaymentMethod("cash")}>Cash</button>
             <button onClick={() => handlePaymentMethod("card")}>Card</button>
            
+         
           </div>
+          <h2 className="total">Total: {grandTotal.toFixed(2)}SR</h2>
         <button
           className={`pay-button ${paymentMethod && checkoutItems.length? "" : "disabled"}`}
           onClick={handlePaymentAndPrint}
@@ -515,6 +532,12 @@ const fetchTodayInvoices = async () => {
           </div>
         </div>
       </div>
+      <footer className="footer3">
+      Developed by{" "}
+      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
+        Khalid Alzahrani
+      </a>
+    </footer>
     </div>
   );
 }

@@ -235,6 +235,20 @@ box-shadow: none;
   transform: scale(1);
   box-shadow: none;
 }
+.footer {
+  text-align: center;
+  background-color: transparent;
+  font-size: 18px;
+padding-top: 2rem;padding-bottom: 2rem;
+
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  
+}
+
 @media screen and (max-width: 768px) {
   .inventory-table  {
     width: 110%;

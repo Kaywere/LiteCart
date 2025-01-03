@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import InventoryManagement from "./pages/InventoryManagement";
 import POS from "./pages/POS";
-import Footer from "./components/Footer";
 
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
             <Route path="/" element={<div className="main-content"><POS /></div>} />
           </Routes>
         </div>
-        <Footer/>
+      
     </Router>
   );
 }
