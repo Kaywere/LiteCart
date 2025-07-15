@@ -37,7 +37,7 @@ function POS() {
       invoiceFormData.append("payment_method", paymentMethod);
       invoiceFormData.append("total", grandTotal);
   
-      const invoiceResponse = await fetch("https://decryptic.online/php2/addInvoice.php", {
+      const invoiceResponse = await fetch("YourPhpURL/addInvoice.php", {
         method: "POST",
         body: invoiceFormData,
       });
@@ -49,7 +49,7 @@ function POS() {
       const { invoice_id } = await invoiceResponse.json();
   
       // Add invoice items
-      const itemsResponse = await fetch("https://decryptic.online/php2/addInvoiceItems.php", {
+      const itemsResponse = await fetch("YourPhpURL/addInvoiceItems.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ function POS() {
       }
   
       // Update stock levels
-      const stockUpdateResponse = await fetch("https://decryptic.online/php2/updateStock.php", {
+      const stockUpdateResponse = await fetch("YourPhpURL/updateStock.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function POS() {
   useEffect(() => {
     const fetchAndValidateMostPickedItems = async () => {
       try {
-        const response = await fetch("https://decryptic.online/php2/getItems.php");
+        const response = await fetch("YourPhpURL/getItems.php");
         if (!response.ok) {
           throw new Error("Failed to fetch items from the database");
         }
@@ -134,7 +134,7 @@ const printInvoice = (latestInvoiceId) => {
 };
 const fetchTodaySales = async () => {
   try {
-    const response = await fetch("https://decryptic.online/php2/getTodaySales.php");
+    const response = await fetch("YourPhpURL/getTodaySales.php");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -154,7 +154,7 @@ const fetchTodaySales = async () => {
 
 const fetchTodayInvoices = async () => {
   try {
-    const response = await fetch("https://decryptic.online/php2/getTodayInvoices.php");
+    const response = await fetch("YourPhpURL/getTodayInvoices.php");
     if (!response.ok) {
       throw new Error("Failed to fetch today's invoices");
     }
@@ -180,7 +180,7 @@ const fetchTodayInvoices = async () => {
     const fetchFilteredItems = async () => {
       try {
         const response = await fetch(
-          `https://decryptic.online/php2/searchItems.php?query=${searchQuery}`
+          `YourPhpURL/searchItems.php?query=${searchQuery}`
         );
         const data = await response.json();
         setFilteredItems(data);
@@ -199,7 +199,7 @@ const fetchTodayInvoices = async () => {
   const fetchInitialItems = async () => {
     try {
       const response = await fetch(
-        `https://decryptic.online/php2/getItems.php?limit=20`
+        `YourPhpURL/getItems.php?limit=20`
       );
       const data = await response.json();
       setFilteredItems(data);
@@ -534,8 +534,8 @@ const fetchTodayInvoices = async () => {
       </div>
       <footer className="footer3">
       Developed by{" "}
-      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
-        Khalid Alzahrani
+      <a href="https://github.com/YourGithub" target="_blank" rel="noopener noreferrer">
+        Yourname
       </a>
     </footer>
     </div>
