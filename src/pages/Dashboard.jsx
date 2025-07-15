@@ -10,7 +10,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchDailyEarnings = async () => {
       try {
-        const response = await fetch("https://decryptic.online/php2/getTodaySales.php");
+        const response = await fetch("YourPhpURL/getTodaySales.php");
         const data = await response.json();
         setDailyEarnings(parseFloat(data.total_sales || 0));
       } catch (error) {
@@ -20,7 +20,7 @@ function Dashboard() {
 
     const fetchTotalInvoices = async () => {
       try {
-        const response = await fetch("https://decryptic.online/php2/getTodayInvoice.php");
+        const response = await fetch("YourPhpURL/getTodayInvoice.php");
         const data = await response.json();
         setTotalInvoices(parseInt(data.total_invoices || 0, 10));
       } catch (error) {
@@ -30,7 +30,7 @@ function Dashboard() {
 
     const fetchTotalItems = async () => {
       try {
-        const response = await fetch("https://decryptic.online/php2/getTotalItems.php");
+        const response = await fetch("YourPhpURL/getTotalItems.php");
         const data = await response.json();
         setTotalItems(parseInt(data.total_items || 0, 10));
       } catch (error) {
@@ -100,8 +100,8 @@ function Dashboard() {
       </div>
       <footer className="footer2">
       Developed by{" "}
-      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
-        Khalid Alzahrani
+      <a href="https://github.com/YourGithub" target="_blank" rel="noopener noreferrer">
+        Yourname
       </a>
     </footer>
     </div>
