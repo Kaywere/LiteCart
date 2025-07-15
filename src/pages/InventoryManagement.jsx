@@ -47,7 +47,7 @@ function InventoryManagement() {
       }));
 
       try {
-        const response = await fetch("https://decryptic.online/php2/import.php", {
+        const response = await fetch("YourPhpURL/import.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function InventoryManagement() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("https://decryptic.online/php2/getItems.php");
+        const response = await fetch("YourPhpURL/getItems.php");
         const data = await response.json();
         setItems(data);
       } catch (error) {
@@ -97,7 +97,7 @@ function InventoryManagement() {
     try {
       const formDataSerialized = new URLSearchParams(formData).toString();
 
-      const response = await fetch("https://decryptic.online/php2/addItem.php", {
+      const response = await fetch("YourPhpURL/addItem.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -146,7 +146,7 @@ function InventoryManagement() {
 
   const handleEditSubmit = async () => {
     try {
-      const response = await fetch("https://decryptic.online/php2/editItem.php", {
+      const response = await fetch("YourPhpURL/editItem.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -183,7 +183,7 @@ function InventoryManagement() {
     if (isMultiDelete) {
 
       try {
-        const response = await fetch("https://decryptic.online/php2/deleteItems.php", {
+        const response = await fetch("YourPhpURL/deleteItems.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ids: selectedItems }),
@@ -202,7 +202,7 @@ function InventoryManagement() {
     } else {
 
       try {
-        const response = await fetch("https://decryptic.online/php2/deleteItem.php", {
+        const response = await fetch("YourPhpURL/deleteItem.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id: deleteId }),
@@ -510,8 +510,8 @@ function InventoryManagement() {
 
 <footer className="footer">
       Developed by{" "}
-      <a href="https://github.com/Kaywere" target="_blank" rel="noopener noreferrer">
-        Khalid Alzahrani
+      <a href="https://github.com/YourGithub" target="_blank" rel="noopener noreferrer">
+        Yourname
       </a>
     </footer>
 
